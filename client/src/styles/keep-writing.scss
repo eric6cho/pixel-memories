@@ -1,0 +1,231 @@
+@import "mixins/mixins.scss";
+
+.keep-writing{
+  &.component{
+    @include transition();
+    position: relative;
+    width:100%;
+    display: flex;
+    min-height:150vh;
+    height: 150vh;
+    background: rgb(192, 224, 202);
+
+    .article-container{
+      @include transition();
+      min-width: 100%;
+      width: 100%;
+      height:1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin:auto;
+      padding: 30px;
+
+      ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.0);
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,0.2);
+        
+        &:hover{
+          background: rgba(0,0,0,0.1);
+        }
+      }
+    }
+      
+    .title-section{
+      @include transition();
+      margin-bottom: 50px;
+      
+      .title{
+        @include transition();
+        font-size: 30px;
+        line-height: 36px;
+        letter-spacing: 1px;
+        font-weight: 700;
+        word-spacing: 0px;
+        color: black;
+      }
+    }
+
+    .dot-section{
+      @include transition();
+      margin-bottom: 50px;
+      width:100%;
+        
+      .dot-row{
+        @include transition();
+        display: flex;
+        justify-content: center;
+
+        .dot,.line{
+          @include transition();
+          min-width:5px;
+          width:5px;
+          height:5px;
+          background: rgb(30,30,30);
+          margin:15px;
+        }
+
+        .line{
+          @include transition();
+          width: 100%;
+            
+          &:first-child{
+            margin-left: 0;
+          }
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .story-container{
+      @include transition();
+      border: 2px solid black;
+      width: 100%;
+      height:80vh;
+      padding:40px 20px;
+      
+      .story-section{
+        @include transition();
+        width: 100%;
+        max-height:100%;
+        padding: 0 20px;
+        overflow-y: scroll;  
+      
+        h4{
+          @include transition();
+          margin: 30px 0 30px;
+          font-size: 18px;
+          line-height: 32px;
+          letter-spacing: 1px;
+          font-weight: 700;
+          word-spacing: 0px;
+
+          &:first-child{
+            margin-top: 0;
+          }
+        }
+
+        p{
+          @include transition();
+          font-size: 12px;
+          line-height: 20px;
+          margin-bottom: 20px;
+          text-align: justify;
+        }
+      }
+    }
+
+    .graphics-section{
+      @include transition();
+      width:100%;
+      display: flex;
+      flex-direction: column;
+
+      .line{
+        @include transition();
+        margin-top: 5px;
+        width:100%;
+        height:2px;
+        background:rgb(30,30,30);
+      }
+
+      .block-section{ 
+        @include transition();
+        display:flex;
+        
+        .left-section{
+          @include transition();
+          width:100%;
+          height:60px;
+          background: rgb(30,30,30);
+          border-radius: 0 0 30px 0;
+          display:flex;
+          align-items: center;
+          padding:0 5px;
+          position:relative;
+          margin-top: -2px;
+
+          &::before {
+            @include transition();
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            bottom: 28px;
+            right:-80px;
+            height: 30px;
+            width: 80px;
+            border-radius: 30px 0 0px 0;
+            box-shadow: -45px 0 0 0 rgb(30,30,30);    
+          }
+        }
+
+        .dot-section{
+          @include transition();
+          height:54px;
+          width:54px;
+          min-width:54px;
+          border-radius: 50%;
+          background: rgb(30,30,30);
+          margin: 2px;
+        }
+      }
+
+      .right-section{
+        @include transition();
+        width:100%;
+        height:54px;
+        border-radius: 27px 0 0 27px;
+        border:2px solid rgb(30,30,30);
+        margin: 2px 0;
+        display: flex;
+
+        .right-section{
+          @include transition();
+          height:auto;
+          margin:2px;
+        }
+      }
+    }
+  }
+}
+
+@include media-md{
+  .keep-writing{
+    &.component{
+  
+      .article-container{
+        min-width: 768px;
+        width: 100%;
+        height:100vh;
+        padding:0 100px;
+      }
+  
+      .story-container{
+        height:800px;
+        padding:80px 40px;
+        
+        .story-section{
+          padding: 0 40px;
+        
+          p{
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }  
+}
+
+@include media-xl{
+  .keep-writing{
+    &.component{
+      min-height:200vh;
+      height: 200vh;
+    }
+  }
+}

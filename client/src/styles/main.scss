@@ -1,0 +1,297 @@
+@import "mixins/mixins.scss";
+
+@include custom-scrollbar();
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: rgb(225,225,225);
+  background: linear-gradient(0deg, rgba(120,120,120,1) 0%, rgba(220,220,220,1) 100%);
+  height:100%;
+  width: 100%;
+  @include defaultText(); 
+  @include defaultImageStyling();
+
+  #root{
+    height:100%;
+    width:100%;
+
+    .App{
+      position: relative;
+      height:100%;
+      width:100%;
+
+      display:flex;
+
+      .main-grid{
+        width:1600px;
+        height:800px;
+        display:flex;
+        border-radius: 30px;
+        //overflow: hidden;
+        margin:auto;
+        position:relative;
+        box-shadow: 2px 4px 24px -8px rgba(0,0,0,0.25);
+       
+      }
+
+
+      .underlay-container{
+        width:calc(100% + 40px);
+        height:calc(50%);
+        position:absolute;
+        bottom:-20px;
+        left:-20px;
+        background: rgb(50,50,220);
+        //border: 40px solid white;
+        border-top: none;
+        border-radius: 0 0 0px 40px;;
+        z-index: -2;
+
+
+        .underlay{
+          width:100%;
+          height:100%;
+          position:relative;
+        }
+
+
+        .tag{
+          @include transition();
+          width:450px;
+          height:80px;
+          background: rgb(50,50,220);
+          border-radius: 0 0 30px 30px;
+          display:flex;
+          align-items: center;
+          position:absolute;
+
+          margin-top: -2px;
+          bottom:-60px;
+          right:0;
+          padding: 15px 50px 15px 17px;
+
+          .inner-tag{
+            height:100%;
+
+            width:100%;
+            border: 1px solid rgb(200, 200, 255);
+          
+            display: flex;
+            align-items: center;
+            border-radius: 1000px 0 0 1000px;
+            padding: 0 0 0 5px;
+          }
+          
+          h1{
+            color: white;
+        
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-size:16px;
+            letter-spacing: 3px;
+            font-weight: 400;
+            margin: 0 15px;
+
+          }
+
+          &::before {
+            @include transition();
+            content: "";
+            position: absolute;
+            background-color: transparent;
+            bottom: 27px;
+            right:450px;
+            height: 33px;
+            width: 80px;
+            border-radius: 0px 40px 0px 0;
+            box-shadow: 40px 0 0 0 rgb(50,50,220);    
+            z-index: -1;
+          }
+        }
+      }
+
+      .image-item{
+        width: 100%;
+        height:100%;
+      }
+
+      .text-section{
+      display:none;
+
+      padding:30px 30px 15px;
+
+      p{
+        
+        font-family: "Lucida Console", "Courier New", monospace;
+        font-size:11px;
+        letter-spacing: 1px;
+        line-height: 15px;
+        margin-bottom: 15px;
+
+      }
+      }
+      .image-item-inner{
+        width:100%;
+        height:100%;
+        display:flex;
+        border-radius: 0px;
+        overflow: hidden;
+        
+        .image{
+
+
+          .image-overlay{
+            background:rgba(255,255,255,0);
+
+          }
+        }
+      }
+
+      .active-image{
+        
+        width:800px;
+        height:800px;
+        padding:00px;
+        background:rgba(40,40,40,1);
+        border-radius: 0 30px 30px 0;
+
+        position: relative;
+
+        display:flex;
+
+
+        .active-image-outer-border{
+          width:450px;
+          min-height:550px;
+          
+          background: rgb(235,235,235);
+          box-shadow: 2px 4px 24px -8px rgba(0,0,0,0.25);
+          border-radius: 12px;
+          overflow: hidden;
+          margin:auto;
+
+          display:flex;
+
+
+          .active-image-inner-border{
+            width:100%;
+            height:100%;
+
+            display:flex;
+
+            .image-item-inner{
+              width: 450px;
+              height:450px;
+              padding:30px;
+              background: rgb(210,210,210);
+            }
+
+            
+          }
+
+
+
+
+        }
+
+
+        .image-item{
+
+          .text-section{
+            display:block;
+          }
+        }
+
+      }
+
+            
+      .image-grid{
+        background: rgb(225,225,225);
+
+        width:800px;
+        height:800px;
+        overflow-y: scroll;
+        position: relative;
+        border-radius: 30px 0 0 30px;
+        
+        .inner-grid{
+        padding:250px 0;
+          width:300px;
+          min-width:300px;
+             display:flex;
+          flex-wrap: wrap;
+          //background:rgb(200,200,200);
+
+          margin: 0 auto ;
+
+
+          .group-title{
+            @include transition();
+            //flex: 0 0 70px;
+              width:100%;
+            max-width: 100%;
+            height:80px;
+
+            background:none;
+
+            
+            padding:15px;
+            margin:10px;
+
+
+            display:flex;
+
+          }
+
+            .grid-item{
+              @include transition();
+            //flex: 0 0 70px;
+              width:80px;
+            max-width: 80px;
+            height:80px;
+
+            background:none;
+
+            
+            padding:15px;
+            margin:10px;
+
+
+            display:flex;
+
+              &:hover{
+                //padding:5px;
+                box-shadow: 2px 4px 24px -8px rgba(0,0,0,0.25);
+              }
+
+
+            }
+
+          
+
+        }
+
+
+
+
+
+      }
+
+      @include media-md{
+
+      }
+
+      @include media-xl{
+
+      }
+
+
+
+    }
+  }
+}

@@ -1,0 +1,151 @@
+
+@mixin media-xs {
+  @media (max-width: 576px) { @content; }
+}
+
+@mixin media-sm {
+  @media (min-width: 576px) { @content; }
+}
+
+@mixin media-md {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin media-lg {
+  @media (min-width: 992px) { @content; }
+}
+
+@mixin media-xl {
+  @media (min-width: 1200px) { @content; }
+}
+
+@mixin media-xxl {
+  @media (min-width: 1400px) { @content; }
+}
+
+@mixin custom-scrollbar() {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+    
+    &:hover{
+      background: rgba(0,0,0,0.2);
+    }
+  }
+}
+
+@mixin defaultText() {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: black;
+
+  h1,h2,h3,h4,p,a,span{
+    margin: 0;
+  }
+
+  h1,h2,h3,h4{
+    font-family: Montserrat, sans-serif;
+  }
+  
+  a{
+    text-decoration:none;
+  }
+
+  h1{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 5px;
+  }
+
+  h2{
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 3px;
+  }   
+
+  h3{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 1px;
+  }
+
+  h4{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+  }
+
+  p,a{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 1px;
+  }
+}
+
+@mixin transition ($duration:0.2) {
+  transition-duration: $duration + unquote("s");
+}
+
+@mixin blur($blur:15){
+  -webkit-backdrop-filter: blur($blur + unquote("px"));
+  backdrop-filter: blur($blur + unquote("px"));
+};
+
+@mixin defaultImageStyling(){
+  
+  .image{
+    @include transition();
+    position: relative;
+    overflow: hidden;
+    height:100%;
+    width: 100%;
+
+    img{
+      background: rgb(30,30,30);
+      position: absolute;
+      height: 102%;
+      width: 102%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    
+    .image-overlay{
+      @include transition();
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      background: rgba(255, 219, 120, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@mixin emblemColor($color){
+  .center{
+    .dot,.line{
+      background: $color;
+    }
+
+    .circle,.square{
+      border-color: $color;
+    }
+  }
+}

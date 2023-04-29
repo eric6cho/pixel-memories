@@ -1,0 +1,228 @@
+@import "mixins/mixins.scss";
+
+.awakened-inspiration{
+  &.component{
+    @include transition();
+    position: relative;
+    width:100%;
+    min-height:120vh;
+    background: rgb(10,10,10);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height:auto;
+    height:2000px;
+   
+    .id-marker{
+      position: absolute;
+      top:5px;
+    }
+
+    .image-grid{
+      @include transition();
+      padding:2px 2px 2px 72px;
+      display: flex;
+      position: relative;
+      background: rgb(79, 170, 255);
+      width: 350px;
+      height: 350px; 
+      margin: calc(15vh + 225px) 0 325px;
+
+      .image-col{
+        @include transition();
+        display: flex;
+        flex-direction: column;
+      
+        .image-container{
+          @include transition();
+          width: 114px;
+          height: 114px; 
+          
+          .image-overlay{
+            @include transition();
+            background: rgba(0, 0, 0, 0);
+          }
+        }
+      }
+      
+      .image-container{
+        @include transition();
+        width: 350px;
+        height: 342px; 
+        margin: 2px;
+        
+        .image-overlay{
+          background: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+
+    .main-image{
+      @include transition();
+      position: absolute;
+      top:15vh;
+      left: 50%;
+      transform: translate(-50%, -0%);
+      max-height: 800px;
+      height: 800px;
+      width: 100%; 
+      margin:auto;
+      
+      .image-overlay{
+        background: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    .title-section{
+      @include transition();
+      height:70px;
+      width:350px;
+      background: rgb(245,245,245);
+      display:flex;
+      align-items: center;
+      justify-content: end;
+      position:absolute;
+      transform: rotate(270deg);
+      top:140px;
+      right:140px;
+      padding:20px 20px 20px 15px;
+
+      .title{
+        @include transition();
+        width:300px;
+        font-size: 14px;
+        letter-spacing: 5px;
+        font-weight: 600;
+        word-spacing: 10px;
+        text-transform: uppercase;
+        color: black;
+        text-align: right;
+      }
+    }
+
+    .emblem{
+      @include emblemColor(rgb(100,100,100));
+    }
+
+    .dot-lg,.line-lg{
+      @include transition();
+      min-width:0px;
+      width:0px;
+      height:0px;
+    }
+
+    .line-lg{
+      @include transition();
+      width: 0px;
+    }
+    
+    .story-section{
+      @include transition();
+      width: 440px;
+      max-width: 100%;
+      padding:20px;
+      z-index: 10;
+
+      p{
+        @include transition();
+        font-size: 12px;
+        line-height: 14px;
+        text-align: right;
+        color:white;
+        margin-bottom: 30px;
+
+        br{
+          display:block;
+          content:' ';
+          height:7px;
+        }
+      }
+    }
+  }
+}
+  
+@include media-md{
+  .awakened-inspiration{
+    &.component{
+      min-height:150vh;
+     
+      .image-grid{ 
+        width: 616px;
+        height:616px; 
+        margin: calc(15vh + 92px) 0 200px;
+  
+        .image-col{
+          .image-container{
+            width: 200px;
+            height:200px; 
+          }
+        }
+        
+        .image-container{
+          width: 344px;
+          height:608px; 
+        }
+      }
+  
+      .title-section{
+        width:616px;
+        top:273px;
+        right:273px;
+      }
+  
+      .dot-lg,.line-lg{
+        min-width:8px;
+        width:8px;
+        height:8px;
+        border:2px solid rgb(100, 100, 100);
+        margin-left:15px;
+      }
+  
+      .line-lg{
+        width: 100px;
+        margin-right:auto;
+      }
+
+      .dot-section{
+        display:block;
+      }
+  
+      .story-section{
+        width: 600px;
+        padding: 20px 0 0;
+      }
+    }
+  }  
+}
+
+
+@include media-xl{
+  .awakened-inspiration{
+    &.component{
+      min-height:200vh;
+      height: 200vh;
+      flex-direction: row;
+      justify-content: center;
+      
+      .id-marker{
+        top:25%;
+      }
+  
+      .image-grid{
+        margin:0;
+      }
+  
+      .main-image{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);      
+      }
+  
+      .story-section{
+        width: 450px;
+      }
+    }
+  } 
+}

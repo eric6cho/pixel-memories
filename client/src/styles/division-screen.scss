@@ -1,0 +1,123 @@
+@import "mixins/mixins.scss";
+
+.division-screen{
+  &.component{
+    @include transition();
+    height:100vh;
+    background: rgb(235,235,235);
+    flex-direction: column;
+    padding:0;
+
+    .image{
+      @include transition();
+    
+      .image-overlay{
+        @include transition();
+        background: rgba(0, 0, 0, 0.3);
+        flex-direction: column;
+        justify-content: center;
+      
+        .image-container{
+          @include transition();
+          height: 300px;
+          width: 300px; 
+          margin: 0 auto;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          z-index: -1;
+        }
+      }
+    }
+    
+    .title{
+      @include transition();
+      font-size: 20px;
+      letter-spacing: 3px;
+      word-spacing: 10px;
+      color:white;
+      font-family: GLoock, serif;
+      margin:0 auto;
+    }
+    
+    .link-row{
+      @include transition();
+      width: 300px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 150px 0;
+      
+      a{
+        @include transition();
+        margin:auto;
+        height:30px;
+        width:30px;
+        display: flex;
+      }
+
+      h4{
+        @include transition();
+        margin:auto;
+        font-size: 14px;
+        letter-spacing: 5px;
+        color:white;
+      }
+    }
+  }
+}
+
+@include media-md{ //>768px
+  .division-screen{
+    &.component{
+    
+      .image{
+        .image-overlay{
+          .image-container{
+            height: 600px;
+            width: 600px; 
+          }
+        }
+      }
+  
+      .title{
+        font-size: 50px;
+      }
+
+      .link-row{
+        width: 600px;
+        margin: 320px 0;
+        
+        h4{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include media-xxl{ //>1400px
+  .division-screen{
+    &.component{
+      height:120vh;
+    
+      .image{
+        .image-overlay{
+          .image-container{
+            width: calc(100% - 200px); 
+          }
+        }
+      }
+  
+      .title{
+        font-size: 120px; 
+      }
+
+      .link-row{
+        margin: 350px 0;
+      }
+    }
+  }
+}
