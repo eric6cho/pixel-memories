@@ -20,7 +20,6 @@ export default function ImageItem(props) {
 
     
         <div className="text-section">
-          <p>{props.data['image']}</p>
           <p>{props.data['notes']}</p>
           <p>{props.data['location']}, {props.data['year']}</p>
         

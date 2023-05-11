@@ -376,12 +376,6 @@ let data = [
     'notes':'',
   },
   {
-    'image':'images/2023-4-25-290-xZTq50ov.png',
-    'location':'Singapore',
-    'year':'2019',
-    'notes':'',
-  },
-  {
     'image':'images/2023-4-25-291-aCxaxmrq.png',
     'location':'Singapore',
     'year':'2019',
@@ -472,12 +466,6 @@ let data = [
     'notes':'Random building while on a daytrip',
   },
   {
-    'image':'images/2023-4-19-1392-5sItcoxE.png',
-    'location':'Singapore',
-    'year':'2019',
-    'notes':'Visiting temples and food courts in Chinatown',
-  },
-  {
     'image':'images/2023-4-19-1433-1TgXEUbX.png',
     'location':'Singapore',
     'year':'2019',
@@ -509,12 +497,6 @@ let data = [
   },
   {
     'image':'images/2023-4-25-284-k4kt5hu7.png',
-    'location':'Bali',
-    'year':'2019',
-    'notes':'',
-  },
-  {
-    'image':'images/2023-4-25-284-MGo2HIvd.png',
     'location':'Bali',
     'year':'2019',
     'notes':'',
