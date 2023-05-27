@@ -2,56 +2,42 @@ import React, { useState, useEffect, useRef } from "react";
 import './styles/main.scss';
 import ImageGrid from './components/image-grid';
 import ImageItem from './components/image-item';
-import ActiveImage from './components/active-image';
 import Emblem from "./components/emblem";
 
 export default function App() {
 
-
   const [activeImage,setActiveImage ] = useState(null);
 
-
   const getComponent = () => {
-    
-
-
+  
     const imagesByYear = data.reduce((imagesByYear, item) => {
       const group = (imagesByYear[item['year']] || []);
       group.push(item);
       imagesByYear[item['year']] = group;
       return imagesByYear;
     }, {});
-
   
     let app = 
       <div className="App">
-
         <div className="main-grid">
-          
           <div className="underlay-container">
             <div className="underlay">
               <div className="tag">
-
                 <div className="inner-tag">
-                    
                   <Emblem/>
                   <h1>pixel memories</h1>
                 </div>
               </div>
             </div>
           </div>
-
           <ImageGrid images={data} imageGroups={imagesByYear} onSelect={setActiveImage}/>
-          
           <div className={'component active-image'}>
             <div className="active-image-outer-border">
               <div className="active-image-inner-border">
                 <ImageItem data={activeImage?activeImage:data[0]}/>
-                
               </div>
             </div>
           </div>
-
         </div>
       </div>;
 
@@ -60,7 +46,6 @@ export default function App() {
 
   return getComponent();
 }
-
 
 let data = [
 
